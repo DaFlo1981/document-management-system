@@ -35,7 +35,7 @@ public interface BookmarkModule {
 	 * Add a new bookmark which points to this document.
 	 *
 	 * @param token The session authorization token.
-	 * @param nodePath A node path to be bookmarked.
+	 * @param nodeId A node path to be bookmarked or its UUID.
 	 * @param name The name of the bookmark.
 	 * @return A bookmark object with the new created bookmark properties.
 	 * @throws AccessDeniedException If there is any security problem: 
@@ -43,7 +43,7 @@ public interface BookmarkModule {
 	 * @thows PathNotFoundException If there is no node with this nodePath.
 	 * @throws RepositoryException If there is any general repository problem.
 	 */
-	public Bookmark add(String token, String nodePath, String name) throws AccessDeniedException,
+	public Bookmark add(String token, String nodeId, String name) throws AccessDeniedException,
 			PathNotFoundException, RepositoryException, DatabaseException;
 
 	/**
